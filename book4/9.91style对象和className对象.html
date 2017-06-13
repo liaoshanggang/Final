@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>（1）在HTML标签中插入JavaScript代码</title>
+<style type="text/css">
+	li{
+	list-style-type:none;
+	text-align:center;
+	float:left;
+	width:120px;
+	text-decoration:none;
+	color:#FFFFFF;
+	background-color:purple;
+	padding:3px 10px;
+	border-right:1px solid #FFFFFF;}
+</style>
+<script>
+	function changeBGC(id){
+		id.style.backgroundColor = 'yellow';
+	}
+</script>
+</head>
+
+<body>
+	<p onclick="this.style.backgroundColor='yellow'">JavaScript事件处理</p>
+    <p onclick="changeBGC(this)">JavaScript事件处理</p>
+    <ul>
+    	<li onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='purple'">
+        首页
+        </li>
+        <li onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='purple'">
+        用户管理
+        </li>
+        <li onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='purple'">
+        购物车
+        </li>
+        <li onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='purple'">
+        订单
+        </li>
+        <li onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='purple'">
+        退出
+        </li>
+    </ul>
+</body>
+</html>

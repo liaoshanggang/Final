@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7.5JavaScript对象的使用</title>
+</head>
+
+<body>
+	<script>
+    	var text = new Object();
+		text.width = 80;
+		text.height = 20;
+		text.name = "密码框";
+		text.color = "blue";
+		document.write(text.name+"的宽和高分别为："+text.width+" "+text.height+"!<br>");
+		var tmp = "object.html";
+		document.write(tmp+"字符串的长度："+tmp.length+"<br>"+tmp+"字符串大写结果："+tmp.toUpperCase()+"<br>字符串的第4个字符是："+tmp.charAt(4)+"<br>文件后缀名："+tmp.substring(7,tmp.length)+"!");
+    </script>
+</body>
+</html>

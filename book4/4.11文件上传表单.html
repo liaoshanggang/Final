@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文件上传表单</title>
+</head>
+
+<body>
+ 	<h3>请将bug截图作为附件上传：</h3>
+    <form action="upload.jsp" method="post" enctype="multipart/form-data">
+		<p>
+        	<input type="file" name="img" accept="image/gif,image/jpeg" />
+        </p>
+        <p>
+        	<input type="hidden" name="hidden" value="bug截图" />
+        </p>
+        <p>
+			<input type="submit" name="upload" value="上传" />
+        </p>
+    </form>
+</body>
+</html>

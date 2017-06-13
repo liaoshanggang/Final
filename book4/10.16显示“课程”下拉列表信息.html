@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>10.16显示“课程”下拉列表信息</title>
+<script type="text/javascript">
+	//创建数组初始化
+	var course = new Array();
+	course["初级"] = ['Java基础上','Java基础下','初级项目'];
+	course["中级"] = ['Web前端技术','Oracle数据库','Web后端技术','中级项目'];
+	course["高级"] = ['Hibernate','Structs','Spring','高级项目'];
+	function initStage(){
+		var stageSel = document.getElementById("stage");
+		for(var i in course){
+			stageSel.add(new Option(i,i),null);
+		}
+	}
+	window.onload = initStage;
+	function changeStage(){
+		var stageValue = document.getElementById("stage").value;
+		var courseSel = document.getElementById("course");
+		showStage();
+		courseSel.options.length = 0;
+		for(var i in course){
+			if(i==stageValue){
+				for(var j in course[i]){
+					courseSel.add(new Option(course[i][j],course[i][j]),null);
+				}
+			}
+		}
+	}
+	function showStage(){
+		var stageShow = document.getElementById("stageInfo");
+		var len = document.getElementById("stage").length;
+		var index = document.getElementById("stage").selectedIndex;
+		stageShow.innerHTML = "阶段下拉列表选项数目为："+len+"被选选项的索引号为："+index;
+	}
+	function showCourse(){
+		var courseShow = document.getElementById("courseInfo");
+		var len = document.getElementById("course").length;
+		var index = document.getElementById("course").selectedIndex;
+		courseShow.innerHTML = "课程下拉列表选项数目为："+len+"被选选项的索引号为："+index;
+	}
+</script>
+</head>
+
+<body>
+	<h3>课程评价</h3>
+    <p>
+    	阶段选择：
+        <select id="stage" style="width:150px;" onchange="changeStage()">
+        	<option>--请选择所处阶段--</option>
+        </select>
+        课程选择：
+        <select id="course" style="width:150px;" onchange="showCourse()">
+			<option>--请选择所学课程--</option>
+        </select>
+    </p>
+    <p><div id="stageInfo"></div></p>
+    <p><div id="courseInfo"></div></p>
+</body>
+</html>

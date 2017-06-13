@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.4location对象</title>
+<script>
+	function assignL1(){
+    	window.location.href = "http://www.sina.com";
+    }
+    function assignL2(){
+    	window.location.assign("http://www.sina.com");
+    }
+</script>
+</head>
+
+	
+<body>
+	<input type="button" value="加载新浪首页1" onclick="assignL1()"/>
+    <input type="button" value="加载新浪首页2" onclick="assignL2()" />
+    <input type="button" value="刷新" onclick="window.location.reload(true)"/>
+    <a href="javascript:window.location.replace('http://www.sina.com')">加载新浪首页</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7.15设置、获取和显示Date对象</title>
+</head>
+
+<body>
+<script>
+	var date = new Date();
+	document.write("Date显示："+date+"<br>");
+	document.write("Date.toUTCString显示："+date.toUTCString()+"<br>");
+	//设置日期和时间
+	date.setFullYear(2017,4,1);
+	date.setHours(23);
+	date.setMinutes(23);
+	date.setSeconds(23);
+	document.write("设置后，Date显示："+date+"<br>");
+	date = new Date("Jan 07,2017,20:20:20");
+	document.write("设置后，Date显示："+date+"<br>");
+</script>
+</body>
+</html>

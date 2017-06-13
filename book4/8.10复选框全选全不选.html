@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.10复选框全选/全不选</title>
+<link rel="stylesheet" type="text/css" href="booklayout.css" />
+<script>
+	function selAllOrNot(){
+		var selAll = document.getElemenntsById("selAll");
+		var bookSet = document.getElementsByNamme("book");
+		if(selAll.checked){
+			for(var i = 0; i<bookSet.length; i++){
+			bookSet[i].checked = true;
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div id="bookdiv">
+    	<dl><input type="checkbox" id="selAll" onclick="selAllOrNot()" />全选</dl>
+    	<dl>
+        	<dt><input type="checkbox" name="book"  /><img src="earth.jpg" alt="Hibernate" /></dt>
+            <dd><a href="#">《使用Hibernate框架轻松连接数据库》</a></dd>
+        </dl>
+        <dl>
+        	<dt><input type="checkbox" name="book" /><img src="earth.jpg" alt="Structs" /></dt>
+            <dd><a href="#">《使用Structs搭建MVC模式商业应用》</a></dd>
+        </dl>
+        <dl>
+			<dt><input type="checkbox" name="book" /><img src="earth.jpg" alt="Spting" /></dt>
+            <dd><a href="#">《使用Spring整合框架及银行业务简介》</a></dd>
+        </dl>
+    </div>
+</body>
+</html>

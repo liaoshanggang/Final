@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7.14String对象属性和方法</title>
+</head>
+
+<body>
+<script>
+	document.write("String('My String').charAt(1)的值为："+String("My String").charAt(1)+"<br>");
+	document.write("String('My String').charCodeAt(1)的值为："+String('My String').charCodeAt(1)+"<br>");
+	var str = new String("My String");
+	<!--document.write("My String.indexOf('String')值为："+str.indexOf("String")+"<br>");-->
+	document.write("My String的长度值为："+str.length+"<br");
+	document.write("My String.slice(3,5)的值为："+str.slice(4,6)+"<br>");
+	var str1 = "What are you doing?";
+	document.write(str1+"用空格分隔后的结果："+str1.split(" ")+"<br>");
+	document.write("由字符编码创建字符串String.fromCharCode(65,66,67)"+String.fromCharCode(65,66,67)+"<br>");
+	//下面的代码将输出为纯粹的HTML锚：<a name="anchorText">Anchor Text!</a>
+	<!--document.write(String("Anchor Text!").anchor("anchorText")+"<br>"));-->
+	var str2 = new String("搜狐首页");
+	document.write(str2.link("http://www.sohu.com")+"<br>");
+	document.write("str2原始值为："+str2.valueOf()+"<br>");
+</script>
+</body>
+</html>

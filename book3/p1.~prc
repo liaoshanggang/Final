@@ -1,0 +1,10 @@
+create or replace procedure p1(v_a in number,v_b number,v_ret out number,v_temp in out number) is
+begin
+  IF(v_a>v_b) THEN
+    v_ret:=v_a;
+  ELSE
+    v_ret:=v_b;
+  END IF;
+  v_temp:=v_temp+1;
+end p1;
+/

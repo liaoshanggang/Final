@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>9.3创建并插入节点</title>
+<script>
+	function copyImg(){
+	var img1Node = document.getElementById("img1");
+	var copyImgNode = img1Node.cloneNode(false);
+	document.body.appendChild(copyImgNode);
+	}
+	function addImg(){
+	var img1Node = document.getElementById("img1");
+	var newNode = document.createElement("img");
+	newNode.src = "2.jpg";
+	newNode.alt = "哈哈哈哈";
+	newNode.border = 1;
+	document.body.insertBefore(newNode,img1Node);
+	}
+	function delImg(){
+	var img1Node = document.getElementById("img1");
+	document.body.removeChild(img1Node);
+	}
+	function repImg(){
+	var img1Node = document.getElementById("img1");
+	var newNode = document.createElement("img");
+	newNode.setAttribute("src","3.jpg");
+	document.body.replaceChild(newNode,img1Node);
+	}
+</script>
+</head>
+
+<body>
+	<h3>创建并插入节点</h3>
+    <input type="button" id="copyBtn" value="复制图像" onclick="copyImg()"/>
+    <input type="button" id="addBtn" value="增加图像" onclick="addImg()" />
+    <input type="button" id="delBtn" value="删除图像" onclick="delImg()"/>
+    <input type="button" id="repBtn" value="替换图像" onclick="repImg()"/>
+    <br />
+    <img id="img1" src="1.jpg" border="1" alt="图书5折" />
+</body>
+</html>

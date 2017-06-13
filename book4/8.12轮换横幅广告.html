@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.12轮换横幅广告</title>
+<style type="text/css">
+	a{
+	font-size:13px;
+	background-color:#000000;
+	color:#ffffff;
+	width:20px;
+	text-decoration:none;};
+</style>
+<script>
+	var nowShow = 1;//为当前显示的图像序号
+	function show(index){
+		if(Number(index)){
+			clearTimeout(sid);
+			nowShow = index;
+		}
+		for(var i = 1; i<5; i++){
+			if(i==nowShow){
+				document.getElementById("img"+nowShow).style.display = "";
+			}else{
+				document.getElementById("img"+i).style.display = "none";
+			}
+		}
+		
+		//设置下一个图像
+		if(nowShow==4){
+			nowShow = 1;
+		}else{
+			nowShow++;	
+		}
+		sid = setTimeout('show()',1000);
+	}
+</script>
+</head>
+
+<body onload="show()">
+	<div style="position:absolute;left:60px;top60px">
+    	<img id="img1" src="81.jpg" style="display:none" border="1" />
+        <img id="img2" src="82.jpg" style="display:none" border="1" />
+        <img id="img3" src="83.jpg" style="display:none" border="1" />
+        <img id="img4" src="84.jpg" style="display:none" border="1" />
+    </div>
+    <div style="position:absolute;left:300px;top:230px" align="center">
+    	<a href="javascript:show(1)">1</a>
+        <a href="javascript:show(2)">2</a>
+        <a href="javascript:show(3)">3</a>
+        <a href="javascript:show(4)">4</a>
+    </div>
+</body>
+</html>

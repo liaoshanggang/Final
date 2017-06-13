@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>9.2访问节点获取表格中的数据</title>
+<style type="text/css">
+	table{
+	border-collapse:collapse;}
+	table,th,td{
+	text-align:center;
+	border:1px solid #000000;
+	font-size:13px;}
+	td{
+	width:140px;
+	height:28px;}
+</style>
+<script type="text/javascript">
+	function show(){
+		var et = document.getElementById("employees");
+		var v = et.lastChild.lastChild.firstChild.innerHTML;alert("hello");
+		document.getElementById("showValue").innerHTML = v;
+	}
+	
+</script>
+</head>
+
+<body>
+	<table id="employees">
+    	<thead>
+        	<tr>
+            	<td>编号</td>
+                <td>姓名</td>
+                <td>电话号码</td>
+                <td>月薪</td>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr>
+            	<td>100</td>
+                <td>史蒂芬</td>
+                <td>515.123.4567</td>
+                <td>24000</td>
+            </tr>
+            <tr>
+            	<td>103</td>
+                <td>哈喽</td>
+                <td>516.123.4567</td>
+                <td>2400</td>
+            </tr>
+            <tr>
+            	<td>105</td>
+                <td>牛逼</td>
+                <td>510.123.4567</td>
+                <td>240</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><input type="button" name="btn" value="表.lastChild.lastChild.firstChild.firstChild.nodeValue" onclick="show()"/></p>
+    <p>获得到的值为：<input type="text" id="showValue" size="65" /></p>
+</body>
+</html>

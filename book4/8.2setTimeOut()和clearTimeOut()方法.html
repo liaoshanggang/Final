@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.2setTimeOut()和clearTimeOut()方法</title>
+<script type="text/javascript">
+	function startT(){
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		document.getElementById('time').value = "现在时间为："+h+":"+m+":"+s;
+		sid = setTimeout("startT()",500);
+	}
+	function stopT(){
+		clearTimeout(sid);
+	}
+</script>
+</head>
+
+<body>
+	<form>
+        <input type="button" value="开始" onclick="startT()" />
+        <input type="text" id="time" />
+        <input type="button" value="停止！" onclick="stopT()" />
+    </form>	
+</body>
+</html>

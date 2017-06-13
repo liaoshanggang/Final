@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7.11JS计算器函数</title>
+<script>
+	function calc(){
+	var input1 = prompt("请输入第一个操作数：","10");
+	var oper = prompt("请输入操作符：","+");
+	var input2 = prompt("请输入第二个操作数：","8");
+	var rst;
+	num1 = parseFloat(input1);
+	num2 = parseFloat(input2);
+	rst = calc2(num1,rst,num2);
+	alert("运算结果为："+rst);
+	}
+	function calc2(num1,rst,num2){
+	switch(oper){
+	case "+":
+	rst = num1 + num2;
+	break;
+	case "-":
+	rst = num1 - num2;
+	break;
+	case "*":
+	rst = num1 * num2;
+	break;
+	case "/":
+	rst = num1 / num2;
+	break;
+	default:
+	rst = "操作数输入错误！";
+	break;
+	}
+	return rst;
+	}
+	
+</script>
+</head>
+
+<body>
+	<input name="calc" type="button" value="JS计算器" onclick="calc()" />
+</body>
+</html>

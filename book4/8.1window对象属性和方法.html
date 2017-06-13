@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.1window对象属性和方法</title>
+<script type="text/javascript">
+	function openWin(){
+	newWin = window.open();
+	newWin.document.write("往窗口文档写入内容!");
+	sohuWin = window.open("http://www.sohu.com");
+	sinaWin = window.open("http://www.sina.com","sina","location=yes,menubar=yes,resizable=yes,scrollbars=yes,status=no,titlebar=yes,toolbar=no,width=400,height=400,left=100,width=100");
+	}
+	function closeWin(){
+		newWin.close();
+		sohuWin.close();
+		sinaWin.close();
+	}
+</script>
+</head>
+
+<body>
+	<input type="button" value="openWin" onclick="openWin()"/>
+	<input type="button" value="closeWin" onclick="closeWin()"/>
+</body>
+</html>

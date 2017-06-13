@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7.13Number对象属性和方法</title>
+</head>
+
+<body>
+<script>
+	document.write("Number.MAX_VALUE:"+Number.MAX_VALUE+"<br>");
+	document.write("Number.MIIN_VALUE:"+Number.MIN_VALUE+"<br>");
+	var month = 13;
+	if(month<1||month>12){
+	month = Number.NaN;
+	}
+	document.write("month:"+month+"<br>");
+	document.write("Number.NEGATIVE_INFINITY:"+Number.NEGATIVE_INFINITY+"<br>");
+	document.write("Number.POSITIVE_INFINITY:"+Number.POSITIVE_INFINITY+"<br>");
+	var x = Number.MAX_VALUE*2;
+	if(x==Number.POSITIVE_INFINITY){
+	document.write("Number.MAX_VALUE*2的值为："+x+"<br>");
+	}
+	var num1 = new Number(17);
+	document.write(num1+"的二进制是："+num1.toString(2)+" 八进制是："+num1.toString(8)+"十六进制是："+num1.toString(16)+"<br>");
+	document.write("Number(12.34567).toFixed(2)的值为："+Number(12.4567).toFixed(2)+"<br>");
+	document.write("Number(1234567).toExponential(4)的值为："+Number(1234567).toExponential(4)+"<br>");
+	document.write("Number(1234567).toPrecision(4)的值为："+Number(1234567).toPrecision(4)+"<br>");
+	document.write("Number(123).valueOf()"+Number(123).valueOf()+"<br>");
+</script>
+</body>
+</html>

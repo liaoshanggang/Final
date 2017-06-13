@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.8显示满意度和8.9显示input元素信息</title>
+<script type="text/javascript">
+	function changeTitle(){
+		document.getElementById("bankTitle").innerHTML = "你已经进入银行服务质量评价系统";
+	}
+	function showService(){
+		var allService = document.getElementsByName("service");
+		var rstStr = "满意度选项包括：",i;
+		for(i=0; i<allService.length; i++){
+			rstStr = rstStr + allService[i].value+" ";
+		}
+		alert(rstStr);
+	}
+	function showInput(){
+		var allInput = document.getElementsByTagName("input");
+		var inputNum = 0,selNum = 0,i;
+		for(i = 0; i<allInput.length; i++){
+			if(allInput[i].checked){
+				selNum++;
+			}
+			inputNum++;
+		}
+		alert("页面中共有"+inputNum+"个元素，其中"+selNum+"个被选中！");
+	}
+</script>
+</head>
+
+<body>
+	<div id="bankTitle"><h3>欢迎进入银行服务质量评价系统</h3></div>
+    <hr />
+ 		<p>
+            您对本次服务的满意程度：
+            <input type="radio" name="service" value="非常满意" checked="checked" />非常满意
+            <input type="radio" name="service" value="满意" />满意
+            <input type="radio" name="service" value="不满意" />不满意
+        </p>
+        <hr />
+        <p>
+        	您觉得本行下列那些服务业务需要改进：
+        </p>
+        <p>
+        	<input type="checkbox" name="improve" value="网点数目" />网点数目
+            <input type="checkbox" name="improve" value="内部环境" />内部环境
+            <input type="checkbox" name="improve" value="窗口数量" checked="checked" />窗口数量
+            <input type="checkbox" name="improve" value="ATM数量" />ATM数量
+        </p>
+        <p>
+        	<input type="checkbox" name="improve" value="业务种类"/>业务种类
+           	<input type="checkbox" name="improve" value="手续简便" />手续简便
+            <input type="checkbox" name="improve" value="客户态度" />客户态度
+            <input type="checkbox" name="improve" value="等待时间" checked="checked" />等待时间
+        </p>
+        <hr />
+        <p>
+        	<input type="button" name="changeTitle" value="改变标题" onclick="changeTitle()" />
+        	<input type="button" name="showService" value="显示满意度选项" onclick="showService()" />
+            <input type="button" name="showInput" value="显示input元素个数" onclick="showInput()" />
+        </p>
+    <hr /> 
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>10.6焦点验证</title>
+<script type="text/javascript">
+	function focusMail(){
+		var mailObj = document.getElementById("email");
+		if(mailObj.value=="请输入用于注册的电子邮箱"){
+			mailObj.value="";
+			mailObj.style.backgroundColor="#f000ff";
+		}
+	}
+	function blurMail(){
+		var mailObj = document.getElementById("email");
+		if(mailObj.value==""){
+			alert("Email不能为空！");
+			mailObj.focus();
+			return false;
+		}
+		if(mailObj.value.indexOf("@")==-1){
+			alert("Email格式不正确，必须包含“@”!");
+			mailObj.focus();
+			return false;
+		}
+		if(mailObj.value.indexOf(".")==-1){
+			alert("Email格式不正确，必须包含“.”");
+			mailObj.focus();
+			return false;
+		}
+		mailObj.style.backgroundColor="#f12344";
+		return true;
+	}
+</script>
+</head>
+
+<body>
+	<form action="succes.html" method="post" onsubmit="return validate_mail()">
+    	<p>Email:<input type="text" id="email" size="30" value="请输入用于注册的电子邮箱" onfocus="focusMail()" onblur="blurMail()" /></p>
+        <p>输入密码：<input type="text" id="pwd" size="24" /></p>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

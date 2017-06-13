@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+	.topdiv{float:right}
+	.topdiv ul{
+	list-style:none;}
+	.topdiv li{
+	float:left;}
+	.topdiv ul li a{
+	font:16px "隶书";}
+	.topdiv ul li a:link{
+	color:blue;
+	text-decoration:none;}
+	.topdiv ul li a:hover{
+	color:#000000;
+	background-color:#DDDDDDD;
+	text-decoration:underline;}
+	.topdiv ul li a:active{
+	color:#FF0000;
+	background-color:#AAAAAA;
+	text-decoration:line-through;}
+	.topdiv ul li a:visited{
+	color:#00FF00;
+	text-decoration:none;}
+	.img1{
+	width:28px;
+	height:26px;
+	background:url(earth.jpg) no-repeat;}
+	.img2{
+	width:28px;
+	height:26px;
+	background:url(%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.jpg) no-repeat -24px 0px;}
+	.img3{
+	width:28px;
+	height:26px;
+	background:url(DWHaha.PNG) no-repeat -48px 0px;}
+	.img4{
+	width:28px;
+	height:26px;
+	background:url(earth.jpg) no-repeat -72px 0px;}
+	.img5{
+	width:28px;
+	height:26px;
+	background:url(%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.jpg) no-repeat -108px 0px;}
+	.text{
+	padding:5px;
+	text-align:center;}
+	.btn{
+	padding:5px;
+	text-align:center;
+	width:44px;
+	height:26px;
+	background:url(layout.css) no-repeat 0px -25px;}

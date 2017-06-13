@@ -1,0 +1,88 @@
+--5.1.1
+---????????????
+INSERT INTO departments(department_id,department_name,manager_id,location_id)
+VALUES(280,'Development',103,1700);
+
+SELECT * FROM departments WHERE department_id = 280;
+
+DELETE departments WHERE department_id IN(280);
+COMMIT;
+
+--插入带空值的行
+--隐式插入
+INSERT INTO departments(department_id,department_name)
+VALUES(290,'Development1');
+--显示插入
+INSERT INTO departments
+VALUES(300,'Development2',NULL,NULL);
+
+SELECT * FROM departments WHERE department_id = 290;
+SELECT * FROM departments WHERE department_id = 300;
+
+--插入日期值
+INSERT INTO employees
+VALUES(207,'Jacky','Wang','JackyWang','515.127.4999','17-6月-13','IT_PROG',8000,NULL,103,60)
+DELETE FROM employees WHERE employee_id = 207;
+COMMIT;
+SELECT * FROM employees
+WHERE employees.employee_id = 207;
+
+
+INSERT INTO employees
+VALUES(208,'Jacky','Cheng','JackyCheng','515.127.4888',to_date('2013/06/08','YYYY/MM/DD'),'IT_PROG',9000,NULL,103,60);
+
+SELECT * FROM employees
+WHERE employees.employee_id = 208;
+
+--插入多行
+---????????????
+INSERT INTO employees
+VALUES(209,'Jacky','Cheng','JackyCheng','515.127.4777',SYSDATE,'IT_PROG',7000,NULL,103,60);
+
+SELECT * FROM employees WHERE employee_id IN(207,208,209);
+
+--表不存在
+INSERT INTO it_emp(employee_id,last_name,hire_date,salary)
+SELECT employee_id,last_name,hire_date,salary
+FROM employee WHERE department_id = 60;
+
+--5.1.2
+SELECT * FROM departments WHERE department_id IN (280);
+UPDATE departments SET manager_id = 102 WHERE department_id = 280;
+SELECT * FROM departments WHERE department_id IN (280);
+
+--更新多个字段
+SELECT * FROM departments WHERE department_id IN(280);
+UPDATE departments
+SET manager_id = (SELECT manager_id FROM departments WHERE department_id = 60),
+    location_id = (SELECT location_id FROM departments WHERE department_id = 60)
+WHERE department_id = 280;
+SELECT * FROM departments WHERE department_id IN(60,280);
+
+--字段的完整性约束
+UPDATE employees
+SET job_id = 'JAVA_PROG'
+WHERE employee_id IN(207,208,209);
+
+--5.1.3
+DELETE departments
+WHERE department_id IN(290,300);
+COMMIT;
+
+SELECT * FROM departments WHERE department_id>270;
+
+--?
+DELETE FROM departments WHERE department_id = 90;
+
+--5.3.2
+DELETE FROM employees WHERE employee_id = 208;
+SELECT employee_id,last_name,salary FROM employees WHERE employee_id = 208;
+ROLLBACK;
+COMMIT;
+
+DELETE FROM employees WHERE employee_id = 208;
+COMMIT;
+
+--5.5.1
+SELECT table_name FROM user_tables;
+SELECT table_name,table_type FROM User_Catalog;

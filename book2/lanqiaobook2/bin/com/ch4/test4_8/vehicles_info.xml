@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!doctype vehicles[
+<!element vehicles(cars,trucks)>
+<!element cars(car*)>
+<!element trucks(trucks+)>
+<!element car(name,oil,loss,brand)>
+<!attlist car id cdata #required>
+<!element truck(name,oil,loss,load)>
+<!attlist truck id cdata #required>
+<!element name(#pcdata)>
+<!element oil(#pcdata)>
+<!element loss(#pcdata)>
+<!element brand(#pcdata)>
+<!element load(#pcdata)>
+]>

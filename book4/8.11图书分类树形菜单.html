@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8.11图书分类树形菜单</title>
+<style type="text/css">
+	body{
+	font-size:14px;
+	line-height:20px;}
+	a{
+	text-decoration:none;
+	color:#009900;}
+	a:hover{
+	color:#FF0000;}
+	img{
+	border:0;
+	vertical-align:middle;}
+	.treeStyle{
+	list-style:none;
+	display:none;}
+</style>
+<script type="text/javascript">
+	function show(bookType){
+		if(document.getElementById(bookType).style.display=='block'){
+			document.getElementById(bookType).style.display='none';
+		}else{
+		document.getElementById(bookType).style.display='block';
+		}
+	}
+</script>
+</head>
+
+<body>
+	<b><img src="DWHaha.PNG" />图书分类</b>
+    <p><a href="javascript:show('1&a')"><img src="DWHaha.PNG"/>文艺</a></p>
+    	<ul id="1&a" class="treeStyple">
+        	<li><img src="DWHaha.PNG"/>文学</li>
+            <li><img src="DWHaha.PNG"/>传记</li>
+            <li><img src="DWHaha.PNG"/>艺术</li>
+            <li><img src="DWHaha.PNG"/>摄影</li>
+        </ul>
+    <p><a href="javascript:show('succ')"><img src="DWHaha.PNG"/>励志/成功</a></p>
+    	<ul id="succ" class="treeStyple">
+        	<li><img src="DWHaha.PNG"/>职场</li>
+            <li><img src="DWHaha.PNG"/>成功</li>
+            <li><img src="DWHaha.PNG"/>人际</li>
+            <li><img src="DWHaha.PNG"/>心灵修养</li>
+        </ul>
+</body>
+</html>
